@@ -3,7 +3,7 @@
 **Aspiring DevOps Engineer** from Tbilisi, Georgia 🇬🇪 — teaching myself the full DevOps stack by building real projects, not just watching tutorials.
 
 🔭 Currently building a progressive DevOps project: containerizing apps, automating pipelines, and learning Infrastructure as Code.
-🌱 Learning my way up: **Docker → CI/CD → Terraform → AWS → Kubernetes → Monitoring**
+🌱 Learning my way up: **Terraform → AWS → Kubernetes → Monitoring**
 ⚡ Foundation: Linux, Bash, Git, Python, networking.
 
 ---
