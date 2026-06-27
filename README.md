@@ -1,123 +1,74 @@
-# 🔗 URL Shortener — DevOps Portfolio Project
+<h1 align="center">Luke Khomeriki</h1>
 
-![CI/CD](https://github.com/lukemadeit09/url-shortener/actions/workflows/ci.yml/badge.svg)
+<p align="center">
+  <b>Aspiring DevOps Engineer · Building the path from code to production, one layer at a time.</b><br>
+  <sub>Tbilisi, Georgia 🇬🇪 · Learning in public · Driven by how systems actually work</sub>
+</p>
 
-A working URL shortener (Flask + Redis), built as a **progressive DevOps project**. Each phase wraps the app in a new layer of real-world DevOps tooling — from local containers all the way to a self-healing Kubernetes deployment with an automated CI/CD pipeline.
-
-Built hands-on, phase by phase, to learn the full DevOps stack.
-
----
-
-## What it does
-
-- Paste a long URL → get a short code back.
-- Visit the short code → get redirected to the original URL.
-- Short codes are stored in Redis.
-- `/health` endpoint for health checks.
+<p align="center">
+  <img src="https://img.shields.io/badge/Focus-DevOps%20%26%20Cloud-2496ED?style=flat-square">
+  <img src="https://img.shields.io/badge/Mindset-Build%20%26%20Break%20%26%20Fix-7B42BC?style=flat-square">
+  <img src="https://img.shields.io/badge/Status-Open%20to%20opportunities-2088FF?style=flat-square">
+</p>
 
 ---
 
-## Tech stack
+### Who I am
 
-| Layer | Tech |
-|---|---|
-| App | Python (Flask) |
-| Data store | Redis |
-| Containers | Docker, Docker Compose |
-| CI/CD | GitHub Actions (test → build → publish to GHCR) |
-| Infrastructure as Code | Terraform |
-| Orchestration | Kubernetes (Deployments, Services, self-healing, scaling) |
-| Monitoring | Prometheus + Grafana *(next)* |
+I'm a 16-year-old teaching myself DevOps the only way that actually sticks — by **building real systems and debugging them when they break.** I'm less interested in collecting tutorials and more interested in understanding *why* infrastructure behaves the way it does: what happens between a `git push` and a running, monitored service in production.
+
+I don't just want to use the tools. I want to know what they're solving.
 
 ---
 
-## Roadmap
+### What I'm building
 
-- [x] **Phase 1 — Containerized app.** Flask + Redis, Dockerfile, Docker Compose, unit tests.
-- [x] **Phase 2 — CI.** GitHub Actions runs the test suite automatically on every push.
-- [x] **Phase 3 — Infrastructure as Code.** Terraform provisions resources (developed and validated against LocalStack).
-- [x] **Phase 4 — CD.** Pipeline builds the Docker image and publishes it to GitHub Container Registry on every green build.
-- [x] **Phase 5 — Kubernetes.** Deployed to a K8s cluster with multiple replicas, load balancing, self-healing, and horizontal scaling.
-- [ ] **Phase 6 — Observability.** Metrics and dashboards with Prometheus + Grafana.
-- [ ] **Phase 7 — DevSecOps.** Image scanning, secret scanning, and secure pipelines.
+Every concept I learn goes into one growing, real project — a URL shortener that I deploy through the entire DevOps lifecycle:
 
----
+> **[url-shortener](https://github.com/lukemadeit09/url-shortener)** — a Flask + Redis service taken from a single container to a self-healing, auto-deployed Kubernetes cluster.
+> Docker · CI/CD (GitHub Actions) · Terraform · Kubernetes · *(monitoring & security next)*
 
-## Run it locally (Docker Compose)
-
-Requires [Docker Desktop](https://www.docker.com/products/docker-desktop/).
-
-```bash
-docker compose up --build
-```
-
-Open http://localhost:8080, paste a URL, and shorten it. Stop with `docker compose down`.
+Each phase adds a real production layer. The README tells the whole story.
 
 ---
 
-## Run the tests
+### The stack I'm working through
 
-```bash
-docker compose exec web python -m pytest
-```
+![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
+![Bash](https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)
+![Terraform](https://img.shields.io/badge/Terraform-7B42BC?style=for-the-badge&logo=terraform&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 
----
-
-## Infrastructure as Code (Terraform)
-
-The `terraform/` folder defines infrastructure as code. Developed against LocalStack (a free local AWS emulator), so it runs at zero cost.
-
-```bash
-cd terraform
-terraform init
-terraform plan
-terraform apply      # creates the resources
-terraform destroy    # tears them down cleanly
-```
+**Next on the bench:** Prometheus & Grafana (observability) · DevSecOps (image & secret scanning) · AWS
 
 ---
 
-## Deploy to Kubernetes
+### How I think about the work
 
-The `k8s/` folder contains the Deployment and Service manifests for the app and Redis.
-
-```bash
-kubectl apply -f k8s/
-kubectl get pods                                  # 1 redis + 2 web pods
-kubectl port-forward service/web 8080:8080        # access at http://localhost:8080
-```
-
-Features demonstrated:
-- **Self-healing** — kill a pod (`kubectl delete pod <name>`) and Kubernetes recreates it automatically.
-- **Scaling** — `kubectl scale deployment web --replicas=4`.
-
-Tear down with `kubectl delete -f k8s/`.
+- **Understand over memorize.** Tools change; the reasoning behind them doesn't.
+- **Automate the boring, master the hard.** The goal is fewer manual steps and fewer 3am surprises.
+- **Break things on purpose.** I learn the most from the error I caused myself.
 
 ---
 
-## CI/CD pipeline
+<div align="center">
 
-On every push to `main`, GitHub Actions:
-1. Runs the test suite (pytest).
-2. **Only if tests pass**, builds the Docker image and publishes it to `ghcr.io/lukemadeit09/url-shortener:latest`.
+![Luke's GitHub stats](https://github-readme-stats.vercel.app/api?username=lukemadeit09&show_icons=true&theme=tokyonight&hide_border=true)
 
-See `.github/workflows/ci.yml`.
+![GitHub Streak](https://streak-stats.demolab.com/?user=lukemadeit09&theme=tokyonight&hide_border=true)
 
----
-
-## Architecture
-
-```
-        ┌──────────────┐         ┌──────────────┐
-Browser │   web (Flask)│ ──────▶ │    redis     │
-        │  2 replicas  │  store/ │              │
-        │  port 5000   │  lookup │  port 6379   │
-        └──────────────┘         └──────────────┘
-     load-balanced by a Kubernetes Service
-```
+</div>
 
 ---
 
-## Author
+<p align="center">
+  <a href="https://www.linkedin.com/in/luke-khomeriki-4b5407415/">
+    <img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white">
+  </a>
+</p>
 
-Built by Luke — a hands-on journey through the full DevOps stack: containers, CI/CD, Infrastructure as Code, and Kubernetes.
+<p align="center"><sub>Always open to advice, collaboration, and opportunities in DevOps, cloud, and platform engineering.</sub></p>
